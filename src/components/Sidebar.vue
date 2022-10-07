@@ -1,11 +1,26 @@
 <script setup>
+// IMPORTS
+import { ref } from "vue";
+import { onClickOutside } from "@vueuse/core";
 import LogoVue from "./Logo.vue";
-
+import SidebarLinks from "./SidebarLinks.vue";
 import { useIcons } from "../reuseable/sidebarIcons.js";
 import { minorStateData } from "../store/state";
+// END
 
+// composable
 const { sideBarLinks } = useIcons();
+// end
+
+// Pi-nia state
 const minorState = minorStateData();
+// end
+
+// Reactive data
+const target = ref(null);
+// vue-use function
+onClickOutside(target, () => minorState.changeSideBarState());
+// end
 </script>
 
 <template>
@@ -15,23 +30,14 @@ const minorState = minorStateData();
       class="bg-black w-full h-screen z-40 bg-opacity-30 absolute top-0"
     >
       <div
-        class="bg-white h-screen absolute z-50 top-0 left-0 border-r border-gray-100 w-full max-w-[240px] shadow"
+        ref="target"
+        class="bg-white h-screen absolute z-50 top-0 left-0 border-r
+         border-gray-100 w-full max-w-[240px] shadow"
       >
         <div class="h-14">
           <LogoVue class="transform -translate-y-2" />
         </div>
-        <div class="my-4">
-          <div
-            v-for="({ icon, text }, index) in sideBarLinks"
-            :key="index"
-            class="flex items-center space-x-6 px-5 hover:bg-gray-100 py-2 cursor-pointer"
-          >
-            <span class="material-symbols-outlined text-md font-light">
-              {{ icon }}
-            </span>
-            <span class="font-light text-sm">{{ text }}</span>
-          </div>
-        </div>
+        <SidebarLinks />
       </div>
     </div>
   </TransitionGroup>
