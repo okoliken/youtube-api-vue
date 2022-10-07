@@ -12,6 +12,6 @@ const { changeSideBarState } = minorStateData();
     >
       menu
     </span>
-    <img src="../assets/download.svg" class="h-20" alt="" />
+    <img src="../assets/download.svg" class="h-18" alt="" />
   </div>
 </template>

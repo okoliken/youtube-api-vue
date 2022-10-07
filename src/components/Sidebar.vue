@@ -16,7 +16,7 @@ const minorState = minorStateData();
     <div
       class="bg-white h-screen absolute z-50 top-0 left-0 border-r border-gray-100 w-full max-w-[240px] shadow"
     >
-      <div class="p-0 m-0">
+      <div class="h-14">
         <LogoVue class="min-w-xs"/>
       </div>
       <div class="my-4">
