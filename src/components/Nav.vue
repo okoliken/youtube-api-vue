@@ -21,7 +21,7 @@ const search = () => {
           @keyup="search"
           type="text"
           placeholder="Search for videos"
-          class="border rounded-sm border-gray-200 w-full py-2 px-4 outline-none appearance-none"
+          class="border bg-gray-50 rounded border-gray-200 w-full py-2 px-4 outline-none appearance-none"
         />
         <div v-if="is_typing" class="bg-white shadow-md absolute w-full p-3">
           <div

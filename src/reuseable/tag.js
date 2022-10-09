@@ -1,40 +1,47 @@
 import { reactive } from "vue";
 
-export function useIcons() {
-  const sideBarLinks = reactive([
+export function useTags() {
+  const tags = reactive([
     {
-      icon: "home",
       text: "Home",
     },
     {
-      icon: "code",
       text: "Coding",
     },
     {
-      icon: "code",
       text: "Vue js",
     },
     {
-      icon: "code",
       text: "Nuxt js",
     },
     {
-      icon: "music_note",
       text: "Music",
     },
     {
-      icon: "podcasts",
       text: "Podcasts",
     },
     {
-      icon: "movie",
       text: "Movie",
     },
     {
-      icon: "fitness_center",
       text: "Sport",
     },
+    {
+      text: "Comedy",
+    },
+    {
+      text: "Live",
+    },
+    {
+      text: "Reaction video",
+    },
+    {
+      text: "Wizkid",
+    },
+    // {
+    //   text: "JavaScript",
+    // },
   ]);
 
-  return { sideBarLinks };
+  return { tags };
 }

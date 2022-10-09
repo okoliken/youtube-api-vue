@@ -3,15 +3,10 @@
 import { ref, onMounted } from "vue";
 import { onClickOutside } from "@vueuse/core";
 import LogoVue from "./Logo.vue";
-import SidebarLinks from "./SidebarLinks.vue";
-import { useIcons } from "../reuseable/sidebarIcons.js";
 import { minorStateData } from "../store/state";
 import { useVideo } from "../store/videos";
 // END
 const getVideosByType = useVideo()
-// composable
-const { sideBarLinks } = useIcons();
-// end
 
 // Pi-nia state
 const minorState = minorStateData();
