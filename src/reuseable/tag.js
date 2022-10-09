@@ -3,7 +3,7 @@ import { reactive } from "vue";
 export function useTags() {
   const tags = reactive([
     {
-      text: "Home",
+      text: "Live",
     },
     {
       text: "Coding",
@@ -30,7 +30,7 @@ export function useTags() {
       text: "Comedy",
     },
     {
-      text: "Live",
+      text: "Food",
     },
     {
       text: "Reaction video",

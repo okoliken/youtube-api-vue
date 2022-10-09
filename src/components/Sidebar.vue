@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 // IMPORTS
 import { ref, onMounted } from "vue";
 import { onClickOutside } from "@vueuse/core";
@@ -41,4 +41,4 @@ onMounted(()=> {
       </div>
     </div>
   </TransitionGroup>
-</template>
+</template> -->

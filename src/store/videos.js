@@ -5,13 +5,17 @@ export const useVideo = defineStore("video", {
   state: () => {
     return {
       videos: [],
-      video_type:'new'
+      video_type: "Live",
     };
   },
   getters: {},
   actions: {
-    async getVideosByType(video_type) {
-      await axios.get(`/search?part=snippet&q=${video_type}`).then(res => console.log(res.data))
+    async getVideosByType() {
+      await axios
+        .get(`/search?part=snippet&q=${this.video_type}`)
+        .then((res) => {
+            this.videos = res.data
+        });
     },
   },
 });
