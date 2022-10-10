@@ -1,18 +1,28 @@
 <script setup>
-import { ref } from "vue";
+import { ref, provide, onUpdated } from "vue";
 import LogoVue from "./Logo.vue";
+import { useDark, useToggle } from "@vueuse/core";
+
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
 
 const is_typing = ref(false);
 
 const search = () => {
   is_typing.value = true;
 };
+
+const theme = ref(isDark);
+
+provide("theme", theme);
+
+onUpdated(() => console.log("ffr"));
 </script>
 
 <template>
   <div class="w-full">
     <header
-      class="bg-white flex items-center justify-between h-14 w-full shadow-sm"
+      class="dark:bg-[#181818] bg-white flex items-center justify-between h-14 w-full shadow-sm"
     >
       <LogoVue />
 
@@ -21,25 +31,28 @@ const search = () => {
           @keyup="search"
           type="text"
           placeholder="Search for videos"
-          class="border bg-gray-50 rounded border-gray-200 w-full py-2 px-4 outline-none appearance-none"
+          class="border dark:bg-[#121212] rounded border-gray-200 dark:border-[#181818] bg-gray-100 w-full py-2 px-4 outline-none appearance-none"
         />
-        <div v-if="is_typing" class="bg-white shadow-md absolute w-full p-3">
+        <div
+          v-if="is_typing"
+          class="bg-white dark:bg-[#121212] shadow-md absolute w-full"
+        >
           <div
-            v-for="(i, index) in 10"
+            v-for="(i, index) in 5"
             :key="index"
             class="cursor-pointer hover:bg-slate-100"
           >
-            <p class="p-3">dwdw</p>
+            <p class="p-3 dark:text-black">dwdw</p>
           </div>
         </div>
       </div>
 
       <div class="md:mr-10">
         <span
-          class="material-symbols-outlined cursor-pointer hover:bg-gray-100 p-2 rounded-full"
-        >
-          light_mode
-        </span>
+          v-text="isDark ? 'dark_mode' : 'light_mode'"
+          @click="toggleDark()"
+          class="material-symbols-outlined cursor-pointer hover:bg-gray-100 dark:bg-gray-100 p-2 rounded-full"
+        />
       </div>
     </header>
   </div>

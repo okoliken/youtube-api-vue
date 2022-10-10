@@ -12,3 +12,7 @@
   opacity: 0;
   transform: translateX(30px);
 }
+
+.bg{
+  background-color: #121212;
+}

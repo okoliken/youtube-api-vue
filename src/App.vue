@@ -6,7 +6,7 @@ import Nav from "./components/Nav.vue";
 </script>
 
 <template>
-  <div>
+  <div >
     <Nav />
     <!-- <Sidebar /> -->
     <RouterView />
