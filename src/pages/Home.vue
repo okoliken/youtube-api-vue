@@ -39,12 +39,7 @@ const get_snippets = (value) => {
         </p>
       </YtChip>
     </div>
-    <section class="container mx0-auto">
-      <div>
-        <h4>{{ getVideosByType.video_type }}</h4>
-      </div>
-
-      <div></div>
+    <section class="container mx-auto pt-10 px-6">
       <YtSnippetContainer />
     </section>
   </main>
