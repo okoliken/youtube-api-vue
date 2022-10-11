@@ -6,11 +6,15 @@ import Nav from "./components/Nav.vue";
 </script>
 
 <template>
-  <div >
+  <div>
     <Nav />
     <!-- <Sidebar /> -->
     <RouterView />
   </div>
 </template>
 
-<style scoped></style>
+<style>
+html.dark{
+  color-scheme: dark;
+}
+</style>

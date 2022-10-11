@@ -22,7 +22,7 @@ onUpdated(() => console.log("ffr"));
 <template>
   <div class="w-full">
     <header
-      class="dark:bg-[#181818] bg-white flex items-center justify-between h-14 w-full shadow-sm"
+      class="dark:bg-lightGrey bg-white flex items-center justify-between h-14 w-full shadow-sm"
     >
       <LogoVue />
 
@@ -31,7 +31,7 @@ onUpdated(() => console.log("ffr"));
           @keyup="search"
           type="text"
           placeholder="Search for videos"
-          class="border dark:bg-[#121212] rounded border-gray-200 dark:border-[#181818] bg-gray-100 w-full py-2 px-4 outline-none appearance-none"
+          class="border dark:bg-[#121212] rounded border-gray-200 dark:border-lightGrey bg-gray-100 w-full py-2 px-4 outline-none appearance-none"
         />
         <div
           v-if="is_typing"
