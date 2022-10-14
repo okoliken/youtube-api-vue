@@ -11,8 +11,8 @@ await getVideosSnippet.getVideosByType();
     :key="snippet.snippet.channelId"
   >
     <img
-      :src="snippet.snippet.thumbnails.medium.url"
-      class="max-w-full h-full max-h-44"
+      :src="snippet.snippet.thumbnails.high.url"
+      :class="`max-w-full h-${snippet.snippet.thumbnails.high.height} w-full`"
       loading="lazy"
     />
     <div>
