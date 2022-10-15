@@ -2,7 +2,7 @@
 import { ref, provide, onUpdated } from "vue";
 import LogoVue from "./Logo.vue";
 import { useDark, useToggle } from "@vueuse/core";
-
+import YtSearch from '@/components/YtSearch.vue'
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
@@ -27,24 +27,7 @@ onUpdated(() => console.log("ffr"));
       <LogoVue />
 
       <div class="w-full max-w-xl relative">
-        <input
-          @keyup="search"
-          type="text"
-          placeholder="Search for videos"
-          class="border dark:bg-[#121212] rounded border-gray-200 dark:border-lightGrey bg-gray-100 w-full py-2 px-4 outline-none appearance-none"
-        />
-        <div
-          v-if="is_typing"
-          class="bg-white dark:bg-[#121212] shadow-md absolute w-full"
-        >
-          <div
-            v-for="(i, index) in 5"
-            :key="index"
-            class="cursor-pointer hover:bg-slate-100"
-          >
-            <p class="p-3 dark:text-black">dwdw</p>
-          </div>
-        </div>
+       <YtSearch />
       </div>
 
       <div class="md:mr-10">

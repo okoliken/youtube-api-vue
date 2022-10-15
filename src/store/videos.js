@@ -5,6 +5,8 @@ export const useVideo = defineStore("video", {
   state: () => {
     return {
       videos: [],
+      search:"",
+      loading:"",
       video_type: "Live",
     };
   },
@@ -17,5 +19,14 @@ export const useVideo = defineStore("video", {
             this.videos = res.data
         });
     },
+    async searchForVideoSnippet(){
+      this.loading = true
+      await axios.get(`/search?part=snippet&q=${this.search}`).then(res => {
+        this.loading = false
+        console.log(res.data)
+      }).catch((err)=> {
+        this.loading = false
+      })
+    }
   },
 });
