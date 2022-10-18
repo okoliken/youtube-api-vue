@@ -18,7 +18,7 @@ const get_snippets = (value) => {
 <template>
   <main>
     <div
-      class="flex dark:bg-lightGrey items-center justify-between p-2 space-x-4 overflow-scroll grow border border-y dark:border-lightGrey"
+      class="flex dark:bg-lightGrey items-center justify-between p-2 space-x-4 overflow-scroll grow-[40px] border border-y dark:border-lightGrey"
     >
       <YtChip
         @click="get_snippets(text)"
